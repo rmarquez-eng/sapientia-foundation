@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-label="Four columns of a program, each a pillar of support">
+  <rect width="640" height="400" fill="#0A2540"/>
+  <g fill="none" stroke="#B8955A" stroke-width="3">
+    <rect x="70"  y="120" width="90" height="200" rx="8"/>
+    <rect x="200" y="120" width="90" height="200" rx="8"/>
+    <rect x="330" y="120" width="90" height="200" rx="8"/>
+    <rect x="460" y="120" width="90" height="200" rx="8"/>
+  </g>
+  <path d="M40 110 H600" stroke="#E2543E" stroke-width="4" stroke-linecap="round"/>
+  <path d="M40 330 H600" stroke="#E2543E" stroke-width="4" stroke-linecap="round"/>
+  <g fill="#DCE3EE" opacity=".85">
+    <circle cx="115" cy="90" r="14"/><circle cx="245" cy="90" r="14"/>
+    <circle cx="375" cy="90" r="14"/><circle cx="505" cy="90" r="14"/>
+  </g>
+  <g stroke="#93A0B4" stroke-width="2.5" opacity=".7">
+    <path d="M92 175 h46 M92 205 h46 M92 235 h30"/>
+    <path d="M222 175 h46 M222 205 h46 M222 235 h30"/>
+    <path d="M352 175 h46 M352 205 h46 M352 235 h30"/>
+    <path d="M482 175 h46 M482 205 h46 M482 235 h30"/>
+  </g>
+</svg>

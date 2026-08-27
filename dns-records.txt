@@ -1,0 +1,33 @@
+Sapientia Foundation - DNS records for GitHub Pages
+Domain: sapientiafoundation.com  (zone hosted at Cloudflare)
+
+ADD THESE IN CLOUDFLARE (DNS > Records > Add record):
+
+Type    Name   Value                   Proxy status
+----    ----   -----                   ------------
+A       @      185.199.108.153         DNS only (grey cloud)
+A       @      185.199.109.153         DNS only (grey cloud)
+A       @      185.199.110.153         DNS only (grey cloud)
+A       @      185.199.111.153         DNS only (grey cloud)
+CNAME   www    rmarquez-eng.github.io  DNS only (grey cloud)
+
+Notes:
+- Set every record to "DNS only" (grey cloud) first so GitHub can issue the
+  TLS certificate. After the repo's Pages settings show "Enforce HTTPS" as
+  available/green (a few minutes to ~1 hour), you may switch to Proxied
+  (orange cloud) if you want Cloudflare in front.
+- Remove any existing A / AAAA / CNAME records on "@" and "www" that point
+  somewhere else first.
+- Repo Pages settings: https://github.com/rmarquez-eng/sapientia-foundation/settings/pages
+
+
+-------------------------------------------------------------------
+OPTIONAL: Cloudflare "Import DNS records" (BIND zone file) equivalent.
+Save the block below as a .txt and upload it under DNS > Records > Import.
+Cloudflare may import these as Proxied - switch them to DNS only afterward.
+
+sapientiafoundation.com.      1  IN  A      185.199.108.153
+sapientiafoundation.com.      1  IN  A      185.199.109.153
+sapientiafoundation.com.      1  IN  A      185.199.110.153
+sapientiafoundation.com.      1  IN  A      185.199.111.153
+www.sapientiafoundation.com.  1  IN  CNAME  rmarquez-eng.github.io.

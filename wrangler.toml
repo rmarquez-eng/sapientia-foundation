@@ -1,0 +1,16 @@
+name = "sapientia-foundation"
+compatibility_date = "2026-06-24"
+compatibility_flags = ["nodejs_compat"]
+pages_build_output_dir = "."
+
+# Rate-limit + abuse-cap store for the credit tool and the letter mailer.
+# Create it once, then paste the id here:
+#   npx wrangler kv namespace create sapientia-rl
+# [[kv_namespaces]]
+# binding = "RL"
+# id = "PASTE_ID_HERE"
+
+# Secrets (never in this file). Set only if the Foundation opts in to the
+# "we'll mail it for you" service:
+#   npx wrangler pages secret put LETTERSTREAM_API_ID
+#   npx wrangler pages secret put LETTERSTREAM_API_KEY

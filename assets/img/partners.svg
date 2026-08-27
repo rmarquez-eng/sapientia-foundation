@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-label="Community organizations linked together in a network">
+  <rect width="640" height="400" fill="#0A2540"/>
+  <g stroke="#93A0B4" stroke-width="2.5" opacity=".55">
+    <path d="M160 120 L320 200 L480 120 M160 280 L320 200 L480 280 M160 120 V280 M480 120 V280"/>
+  </g>
+  <g fill="#0A2540" stroke="#B8955A" stroke-width="3">
+    <rect x="120" y="90" width="80" height="60" rx="8"/>
+    <rect x="120" y="250" width="80" height="60" rx="8"/>
+    <rect x="440" y="90" width="80" height="60" rx="8"/>
+    <rect x="440" y="250" width="80" height="60" rx="8"/>
+  </g>
+  <circle cx="320" cy="200" r="42" fill="#0A2540" stroke="#E2543E" stroke-width="4"/>
+  <path d="M305 200l10 10 20 -22" stroke="#E2543E" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

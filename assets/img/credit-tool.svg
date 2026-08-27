@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-label="A credit report document under a magnifying glass with an item flagged">
+  <rect width="640" height="400" fill="#0A2540"/>
+  <rect x="120" y="50" width="300" height="300" rx="12" fill="#0A2540" stroke="#B8955A" stroke-width="3"/>
+  <g stroke="#93A0B4" stroke-width="2.5" opacity=".7">
+    <path d="M150 95h240M150 125h240M150 155h180M150 215h240M150 245h150"/>
+  </g>
+  <rect x="146" y="170" width="248" height="30" rx="6" fill="none" stroke="#E2543E" stroke-width="3"/>
+  <circle cx="420" cy="250" r="70" fill="none" stroke="#E2543E" stroke-width="6"/>
+  <path d="M470 300 L540 360" stroke="#E2543E" stroke-width="10" stroke-linecap="round"/>
+  <path d="M395 250 h50 M420 225 v50" stroke="#B8955A" stroke-width="4" stroke-linecap="round"/>
+</svg>

@@ -1,38 +1,73 @@
 # Sapientia Foundation — sapientiafoundation.com
 
-Static one-page site. Design system carried over from vermilionvitez.com
-(dark navy ground, Playfair Display + Inter, vermilion/gold accents, pill
-buttons, grain overlay) — see `assets/style.css`.
+Static site + a few Cloudflare Pages Functions. Design system carried over
+from vermilionvitez.com (dark navy, Playfair Display + Inter, vermilion/gold,
+pill buttons, grain overlay) — see `assets/style.css`.
 
-## Files
-- `index.html` — the whole site (one-pager, anchored sections)
-- `404.html`
-- `assets/style.css` — shared design system
-- `_headers` — security headers + asset caching (Cloudflare Pages)
-- `robots.txt`, `sitemap.xml`
+## Pages
+- `/` home — overview + mission + stats
+- `/program/` — the Fair Credit & Debt Program (4 components, participant flow)
+- `/who-we-serve/` — priority communities, geography
+- `/workshops/` — workshop series, clinic flow, notice list
+- `/partners/` — who we work with, division of labor, train-the-trainer
+- `/about/` — trust structure, board, safeguards
+- `/credit-tool/` — the free guided self-help tool (see below)
 
-## Deploy (Cloudflare Pages)
-
-Domain is already in Cloudflare. Cheapest path — no build step, no Worker:
+## Build
+Pages are generated from fragments in `.build/src/*.html` wrapped by
+`.build/build.py` (stdlib only, no deps). The dot-prefix keeps `.build/` out
+of the deployed site.
 
 ```
-npx wrangler pages project create sapientia-foundation --production-branch main
-npx wrangler pages deploy . --project-name sapientia-foundation
+npm run build     # regenerate every <name>/index.html
+npm test          # build + assert pages/functions are intact
 ```
 
-Then in the Cloudflare dashboard: Pages → sapientia-foundation → Custom
-domains → add `sapientiafoundation.com` and `www.sapientiafoundation.com`.
-Cloudflare adds the CNAME automatically since the zone is on the account.
+Edit content in `.build/src/`, not the generated `*/index.html`.
 
-To preview locally: `npx wrangler pages dev .`
+## The free credit tool  (`/credit-tool/` + `functions/`)
+
+Ported from vermilionvitez.com's `_worker.js`:
+
+| Piece | File | Notes |
+|---|---|---|
+| Report text extraction + tradeline detection | `functions/api/credit-report/extract.js` | `unpdf`. PDF read in memory, never stored. IP rate-limited via the `RL` KV namespace. |
+| Letter drafting (dispute / validation / goodwill) | client-side in `/credit-tool/` | The participant is the author and sender. Download `.txt` or print to PDF. |
+| "Sapientia mails it for me" | `functions/api/letters/mail.js` + `.../status.js` | **Off by default.** LetterStream port, free to the participant (Foundation absorbs cost). Enable by setting the two secrets below. Daily + per-IP caps protect the prepay balance. |
+
+### Setup for the Functions (Cloudflare Pages only — see hosting note)
+
+```
+npx wrangler kv namespace create sapientia-rl
+# paste the id into wrangler.toml under [[kv_namespaces]] binding = "RL"
+
+# optional — only if the Foundation opts into mailing letters:
+npx wrangler pages secret put LETTERSTREAM_API_ID
+npx wrangler pages secret put LETTERSTREAM_API_KEY
+```
+
+Without the KV namespace the rate limits fail open (tool still works).
+Without the secrets the mailing option stays hidden and only the
+self-send flow is offered.
+
+## Hosting
+
+**The Functions need Cloudflare Pages** (or Workers). They do not run on
+GitHub Pages — there, the static pages work, letter drafting works, but PDF
+upload analysis and the mail option do not (paste-text analysis still works
+as a fallback).
+
+Deploy to Cloudflare Pages (domain already on the account):
+
+```
+npm run deploy
+# then: dashboard > Workers & Pages > sapientia-foundation > Custom domains
+#       > add sapientiafoundation.com and www
+```
+
+The repo also builds on GitHub Pages as-is (degraded credit tool). Pick one
+host and point DNS at it — don't run both.
 
 ## Content source
-All copy is from `~/Desktop/Sapientia Foundation - Grant Package/`
-(grant application + program description). Update those and this together.
-
-## Not built yet (add when real)
-- The free self-help credit-dispute tool (linked as "coming" — currently the
-  program section just describes it).
-- Real donation flow — "Support the work" is a mailto for now. Add Stripe /
-  a donor platform when there's an account to point at.
-- Workshop schedule — mailto notice list until partner agreements land.
+`~/Desktop/Sapientia Foundation - Grant Package/` (grant application +
+program description). Keep copy and those documents in sync.

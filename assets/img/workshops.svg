@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-label="People seated around a table at a workshop with a presentation board">
+  <rect width="640" height="400" fill="#0A2540"/>
+  <rect x="70" y="60" width="200" height="130" rx="8" fill="none" stroke="#B8955A" stroke-width="3"/>
+  <g stroke="#93A0B4" stroke-width="2.5" opacity=".7"><path d="M95 95h150M95 120h150M95 145h96"/></g>
+  <path d="M300 130 l60 -30" stroke="#E2543E" stroke-width="4" stroke-linecap="round"/>
+  <ellipse cx="360" cy="300" rx="230" ry="60" fill="none" stroke="#B8955A" stroke-width="3"/>
+  <g fill="none" stroke="#E2543E" stroke-width="3">
+    <circle cx="180" cy="270" r="20"/><circle cx="300" cy="330" r="20"/>
+    <circle cx="430" cy="330" r="20"/><circle cx="540" cy="270" r="20"/>
+    <circle cx="360" cy="245" r="20"/>
+  </g>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-label="An open book with a rising line, representing knowledge building financial stability">
+  <rect width="640" height="400" fill="#0A2540"/>
+  <path d="M320 110c-46-30-108-30-140-16v190c32-14 94-14 140 16 46-30 108-30 140-16V94c-32-14-94-14-140 16z"
+        fill="none" stroke="#B8955A" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M320 110v190" stroke="#B8955A" stroke-width="3"/>
+  <polyline points="200,300 260,250 300,275 370,200 450,160" fill="none" stroke="#E2543E" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="450" cy="160" r="8" fill="#E2543E"/>
+</svg>

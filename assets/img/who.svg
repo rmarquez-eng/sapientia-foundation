@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-label="A group of different people standing together">
+  <rect width="640" height="400" fill="#0A2540"/>
+  <g stroke-width="3" fill="none">
+    <g stroke="#B8955A"><circle cx="140" cy="150" r="30"/><path d="M95 320c0-40 20-70 45-70s45 30 45 70"/></g>
+    <g stroke="#E2543E"><circle cx="260" cy="135" r="34"/><path d="M208 320c0-46 24-80 52-80s52 34 52 80"/></g>
+    <g stroke="#B8955A"><circle cx="390" cy="150" r="30"/><path d="M345 320c0-40 20-70 45-70s45 30 45 70"/></g>
+    <g stroke="#2E7CE8"><circle cx="500" cy="140" r="32"/><path d="M452 320c0-44 22-76 48-76s48 32 48 76"/></g>
+  </g>
+  <path d="M60 322 H600" stroke="#93A0B4" stroke-width="2.5" opacity=".6"/>
+</svg>

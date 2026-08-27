@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-label="Balanced scales in front of a columned building">
+  <rect width="640" height="400" fill="#0A2540"/>
+  <g fill="none" stroke="#B8955A" stroke-width="3">
+    <path d="M180 90 H460 M200 90 V300 M440 90 V300 M270 90 V300 M370 90 V300"/>
+    <path d="M160 90 L320 40 L480 90"/>
+    <path d="M170 300 H470"/>
+  </g>
+  <g fill="none" stroke="#E2543E" stroke-width="4" stroke-linecap="round">
+    <path d="M320 120 V300"/>
+    <path d="M250 150 H390"/>
+    <path d="M250 150 l-24 46 a26 22 0 0 0 48 0 z"/>
+    <path d="M390 150 l-24 46 a26 22 0 0 0 48 0 z"/>
+  </g>
+</svg>
