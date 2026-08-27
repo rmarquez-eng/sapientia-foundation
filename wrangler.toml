@@ -4,11 +4,9 @@ compatibility_flags = ["nodejs_compat"]
 pages_build_output_dir = "."
 
 # Rate-limit + abuse-cap store for the credit tool and the letter mailer.
-# Create it once, then paste the id here:
-#   npx wrangler kv namespace create sapientia-rl
-# [[kv_namespaces]]
-# binding = "RL"
-# id = "PASTE_ID_HERE"
+[[kv_namespaces]]
+binding = "RL"
+id = "db8ea8f965314f8bb31ab329a3cb706a"
 
 # Secrets (never in this file). Set only if the Foundation opts in to the
 # "we'll mail it for you" service:

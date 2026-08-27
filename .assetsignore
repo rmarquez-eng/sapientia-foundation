@@ -1,0 +1,10 @@
+.build
+node_modules
+package.json
+package-lock.json
+wrangler.toml
+README.md
+dns-records.txt
+.git
+.gitignore
+.wrangler
