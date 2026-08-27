@@ -299,10 +299,56 @@
       var s = await res.json();
       if (!s.enabled) return;
       box.style.display = 'block';
-      box.innerHTML = '<div class="note" style="margin-top:0"><strong>Optional:</strong> '
-        + (s.message || 'Sapientia can mail this letter by certified mail on your behalf, at cost, with tracking.')
-        + ' Ask an educator at a clinic to set this up.</div>';
+      box.innerHTML = ''
+        + '<div class="note" style="margin-top:0"><strong>Optional &mdash; Sapientia mails it for you.</strong> '
+        + (s.message || 'We print and mail this letter on your behalf, at the Foundation’s cost, with tracking.')
+        + ' You are still the sender; the return address is yours.</div>'
+        + '<div class="row"><div><label>Send as</label><select id="m-class">'
+        + '<option value="certifiedreturn">Certified mail, return receipt</option>'
+        + '<option value="certified">Certified mail</option>'
+        + '<option value="firstclass">First-class mail</option></select></div>'
+        + '<div><label>Recipient name</label><input id="m-rname"></div></div>'
+        + '<label>Recipient address line 1</label><input id="m-ra1">'
+        + '<label>Recipient address line 2 (optional)</label><input id="m-ra2">'
+        + '<div class="row"><div><label>Recipient city</label><input id="m-rcity"></div>'
+        + '<div><label>Recipient state</label><input id="m-rstate" maxlength="2" placeholder="VA"></div></div>'
+        + '<label>Recipient ZIP</label><input id="m-rzip" inputmode="numeric">'
+        + '<label style="margin-top:16px">Your return address line 1</label><input id="m-sa1">'
+        + '<label>Your return address line 2 (optional)</label><input id="m-sa2">'
+        + '<div class="row"><div><label>Your city</label><input id="m-scity"></div>'
+        + '<div><label>Your state</label><input id="m-sstate" maxlength="2"></div></div>'
+        + '<label>Your ZIP</label><input id="m-szip" inputmode="numeric">'
+        + '<button class="btn lg" id="m-send" style="margin-top:16px">Mail this letter</button>'
+        + '<div id="m-result" style="margin-top:12px;font-size:.93rem;color:var(--muted)"></div>';
+      document.getElementById('m-send').addEventListener('click', sendLetter);
     } catch (e) { /* service not configured; stay hidden */ }
+  }
+
+  async function sendLetter() {
+    var out = document.getElementById('m-result'), btn = document.getElementById('m-send');
+    var body = document.getElementById('letter-out').value.trim();
+    if (!body) { out.textContent = 'Draft a letter first.'; return; }
+    var payload = {
+      body_text: body, mail_class: document.getElementById('m-class').value,
+      recipient_name: val('m-rname'), recipient_address1: val('m-ra1'), recipient_address2: val('m-ra2'),
+      recipient_city: val('m-rcity'), recipient_state: val('m-rstate'), recipient_zip: val('m-rzip'),
+      sender_name: val('f-name'), sender_address1: val('m-sa1'), sender_address2: val('m-sa2'),
+      sender_city: val('m-scity'), sender_state: val('m-sstate'), sender_zip: val('m-szip')
+    };
+    btn.disabled = true; out.textContent = 'Sending…';
+    try {
+      var res = await fetch('/api/letters/mail', {
+        method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(payload)
+      });
+      var d = await res.json();
+      if (!res.ok) throw new Error(d.error || 'Could not send.');
+      out.innerHTML = '<strong style="color:var(--heading)">Sent.</strong> Job number '
+        + esc(String(d.jobId)) + ' &mdash; ' + esc(d.message || '') + ' Write the job number down.';
+    } catch (err) {
+      out.textContent = err.message || String(err);
+    } finally {
+      btn.disabled = false;
+    }
   }
 })();
 </script>
