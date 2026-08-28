@@ -1,4 +1,4 @@
-# Sapientia Foundation — sapientiafoundation.com
+# Sapientia Foundation — sapientiafoundation.net
 
 Static site + a few Cloudflare Pages Functions. Design system carried over
 from vermilionvitez.com (dark navy, Playfair Display + Inter, vermilion/gold,
@@ -62,7 +62,7 @@ Deploy to Cloudflare Pages (domain already on the account):
 ```
 npm run deploy
 # then: dashboard > Workers & Pages > sapientia-foundation > Custom domains
-#       > add sapientiafoundation.com and www
+#       > add sapientiafoundation.net and www
 ```
 
 The repo also builds on GitHub Pages as-is (degraded credit tool). Pick one

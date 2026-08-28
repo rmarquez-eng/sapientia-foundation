@@ -11,7 +11,7 @@ then the <main> inner HTML. Output goes to <name>/index.html
 import pathlib, re, html
 
 ROOT = pathlib.Path(__file__).parent.parent
-SITE = "https://sapientiafoundation.com"
+SITE = "https://sapientiafoundation.net"
 
 NAV = [
     ("about",        "/about/",         "About"),
