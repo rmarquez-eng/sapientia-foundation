@@ -16,7 +16,8 @@ for rel in PAGES:
     assert "<title>" in html and "</title>" in html, f"{rel}: missing title"
     assert 'id="nav"' in html, f"{rel}: shared nav missing"
     assert "<footer>" in html, f"{rel}: shared footer missing"
-    assert "39-4961628" in html, f"{rel}: EIN missing"
+    assert "Sapientia Foundation" in html, f"{rel}: org name missing"
+    assert "39-4961628" not in html, f"{rel}: EIN must not appear on the site"
     # things that must never appear on the site
     low = html.lower()
     for banned in ["boost your score", "results guaranteed", "guaranteed results",
