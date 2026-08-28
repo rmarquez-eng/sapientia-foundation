@@ -91,8 +91,8 @@ SHELL = """<!DOCTYPE html>
       </div>
       <div class="f-col">
         <div class="f-h">Contact</div>
-        <a href="mailto:r.marquezjr2014@gmail.com">r.marquezjr2014@gmail.com</a>
-        <a href="tel:+15714905426">(571) 490-5426</a>
+        <a href="mailto:admin@sapientiafoundation.net">admin@sapientiafoundation.net</a>
+        <a href="tel:+18006212294">(800) 621-2294</a>
         <a>PO Box 143, Woodbridge, VA 22194</a>
         <a href="/privacy/">Privacy Policy</a>
         <a href="/terms/">Terms &amp; Disclaimer</a>

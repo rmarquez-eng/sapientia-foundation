@@ -17,7 +17,8 @@ for rel in PAGES:
     assert 'id="nav"' in html, f"{rel}: shared nav missing"
     assert "<footer>" in html, f"{rel}: shared footer missing"
     assert "Sapientia Foundation" in html, f"{rel}: org name missing"
-    assert "39-4961628" not in html, f"{rel}: EIN must not appear on the site"
+    for pii in ["39-4961628", "marquezjr2014", "gmail.com", "490-5426", "5714905426"]:
+        assert pii not in html, f"{rel}: private info {pii!r} must not appear on the site"
     # things that must never appear on the site
     low = html.lower()
     for banned in ["boost your score", "results guaranteed", "guaranteed results",
