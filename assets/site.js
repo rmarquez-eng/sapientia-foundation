@@ -10,10 +10,15 @@
   if (mb && nl) {
     mb.addEventListener('click', function () {
       var open = nl.classList.toggle('open');
+      document.body.classList.toggle('menu-open', open);
       mb.setAttribute('aria-expanded', open);
     });
     nl.addEventListener('click', function (e) {
-      if (e.target.tagName === 'A') nl.classList.remove('open');
+      if (e.target.tagName === 'A') {
+        nl.classList.remove('open');
+        document.body.classList.remove('menu-open');
+        mb.setAttribute('aria-expanded', false);
+      }
     });
   }
 })();

@@ -19,6 +19,7 @@ NAV = [
     ("workshops", "/workshops/",     "Workshops &amp; Clinics"),
     ("partners",  "/partners/",      "Partners"),
     ("about",     "/about/",         "About"),
+    ("tool",      "/credit-tool/",   "Free Credit Tool"),
 ]
 
 LOGO_SVG = ('<svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="12" fill="#0A2540"/>'
