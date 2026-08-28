@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://sapientiafoundation.com/</loc></url>
-  <url><loc>https://sapientiafoundation.com/program/</loc></url>
+  <url><loc>https://sapientiafoundation.com/about/</loc></url>
+  <url><loc>https://sapientiafoundation.com/governance/</loc></url>
+  <url><loc>https://sapientiafoundation.com/programs/</loc></url>
   <url><loc>https://sapientiafoundation.com/who-we-serve/</loc></url>
   <url><loc>https://sapientiafoundation.com/workshops/</loc></url>
   <url><loc>https://sapientiafoundation.com/partners/</loc></url>
-  <url><loc>https://sapientiafoundation.com/about/</loc></url>
-  <url><loc>https://sapientiafoundation.com/credit-tool/</loc></url>
+  <url><loc>https://sapientiafoundation.com/toolkit/</loc></url>
+  <url><loc>https://sapientiafoundation.com/transparency/</loc></url>
+  <url><loc>https://sapientiafoundation.com/contact/</loc></url>
+  <url><loc>https://sapientiafoundation.com/privacy/</loc></url>
+  <url><loc>https://sapientiafoundation.com/terms/</loc></url>
 </urlset>

@@ -146,6 +146,27 @@ pre.rawtext{margin-top:16px;max-height:320px;overflow:auto;background:var(--bg);
 @media (max-width:900px){
   .grid.c3,.grid.c4{grid-template-columns:repeat(2,1fr)}
 }
+/* ---- credit dispute wizard ---- */
+.dc-prog{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0 0 24px;padding:0}
+.dc-prog li{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--muted);background:var(--raised);border:1px solid var(--border);border-radius:999px;padding:6px 14px;cursor:pointer}
+.dc-prog li span{width:20px;height:20px;border-radius:50%;background:var(--border);color:var(--heading);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700}
+.dc-prog li.on{color:var(--heading);border-color:var(--verm-light)}
+.dc-prog li.on span{background:linear-gradient(135deg,var(--verm),#8a3009);color:#fff}
+.dc-prog li.done span{background:var(--green);color:#04231a}
+.dc-panel{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:28px}
+.dc-panel h2{font-family:var(--serif);color:var(--heading);font-size:1.4rem;margin-bottom:6px}
+.dc-sub{color:var(--muted);font-size:.94rem;margin-bottom:16px}
+.dc-nav{display:flex;justify-content:space-between;margin-top:20px}
+.dc-card{background:var(--raised);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px}
+.dc-card-h{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.dc-card-b{color:var(--muted);font-size:.9rem;margin:6px 0 10px}
+.dc-card select,.dc-card input{width:100%;background:var(--bg);border:1px solid var(--border);border-radius:9px;padding:9px 11px;color:var(--text);font:inherit;margin-top:8px}
+.dc-x{background:none;border:none;color:var(--muted);font-size:12px;cursor:pointer;text-decoration:underline;flex:none}
+.dc-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:6px}
+.dc-tag{font-size:12px;color:var(--muted);background:var(--bg);border:1px solid var(--border);border-radius:999px;padding:5px 12px}
+.dc-io{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.finding .tag.flag{background:rgba(193,68,14,.16);color:var(--verm-light);font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px}
+
 @media (max-width:860px){
   .page-hero .split{grid-template-columns:1fr;gap:28px}
   .tool .row{grid-template-columns:1fr}
